@@ -6,5 +6,5 @@ layui.config({
     version: new Date().getTime()
 }).use(['baseAjax'], function () {
     var base_ajax = layui.baseAjax;
-    top.location.replace(base_ajax.projectUrl + "/pages/views/user/login.html");
+    top.location.replace(base_ajax.projectUrl + "pages/views/user/login.html");
 });
