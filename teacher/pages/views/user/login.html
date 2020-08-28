@@ -117,26 +117,24 @@
             console.log(data);
 
             base_ajax.post("/system/manger/login", JSON.stringify(data), function (result) {
-                var data = result.data;
-                console.log(data);
-                if (data != undefined) {
-                    layui.data('user', {
-                        key: 'name', value: data.name
-                    });
-                    layui.data('user', {
-                        key: 'id', value: data.id
-                    });
-                    layui.data('user', {
-                        key: 'idCard', value: data.idCard
-                    });
-                    layui.data('user', {
-                        key: 'phone', value: data.phone
-                    });
+                var status = result.status;
+                if (status == 2) {
+                    // layui.data('user', {
+                    //     key: 'name', value: data.name
+                    // });
+                    // layui.data('user', {
+                    //     key: 'id', value: data.id
+                    // });
+                    // layui.data('user', {
+                    //     key: 'idCard', value: data.idCard
+                    // });
+                    // layui.data('user', {
+                    //     key: 'phone', value: data.phone
+                    // });
                     alert("登录成功！");
+                    window.location.replace(base_ajax.projectUrl + "pages/views/index.html");
                 } else {
-                    layer.msg(data.msg, {time: 1000});
-                    console.log(data.msg);
-
+                    layer.msg(result.msg, {time: 1000});
                 }
 
             });

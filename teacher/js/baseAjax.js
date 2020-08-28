@@ -4,7 +4,7 @@ layui.define('layer', function (exports) {
 
     var baseAjax = {
         severUrl: "http://chengmai.iok.la:38450/housing/",
-        projectUrl: "http://localhost:63342/teacher/",
+        projectUrl: "http://localhost:63343/teacher/",
         post: function (url, params, callback) {
             $.ajax({
                 type: "POST",
@@ -12,17 +12,14 @@ layui.define('layer', function (exports) {
                 timeout: 50000,
                 dataType: "json",
                 data: params,
-                beforeSend: function () {
-                },
                 contentType: "application/json",
                 success: function (result) {
-                    if (result != null && result.status == 2) {
+                    if (result != null) {
                         callback(result);
                     }
                 },
                 error: function (result) {
-                    layer.msg(JSON.stringify(result), {time: 1000});
-                    console.log(JSON.stringify(result));
+                    layer.msg(result, {time: 1000});
                     // top.location.replace(baseAjax.projectUrl + "pages/404.html");
                 }
             });
