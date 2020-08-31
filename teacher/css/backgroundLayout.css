@@ -1,0 +1,38 @@
+
+.content-container {
+    /*border: solid 1px red;*/
+    margin: 18px 6%;
+}
+
+
+.container {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.container-content {
+    margin: 18px 0;
+}
+
+.container-header {
+    position: relative;
+    z-index: 1000;
+}
+
+
+.container-header2 {
+    position: relative;
+    z-index: 1000;
+}
+
+.container-header2 .table-search-fieldset {
+    margin: 0;
+    border: 1px solid #e6e6e6;
+    padding: 10px 20px 5px 20px;
+    color: #6b6b6b;
+}
+
+.container-content-tables {
+    margin-top: 2%;
+    width: 100%;
+}
